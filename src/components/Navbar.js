@@ -1,6 +1,7 @@
 // NavBar.js
 
 import React, { useState } from "react";
+// Replace with the actual path to your logo
 
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -13,9 +14,12 @@ const NavBar = () => {
     <nav className="p-6">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <div className="text-custom-blue font-bold italic text-xl">
-            FOAMEXPERTS
-          </div>
+          {/* Replace text with logo */}
+          <img
+            src="./images/foam-experts-logo.png"
+            alt="Logo"
+            className=" h-16 w-auto"
+          />
         </div>
 
         {/* Navigation Links for Medium and Larger Screens */}
