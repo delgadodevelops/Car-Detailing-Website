@@ -1,61 +1,125 @@
-// NavBar.js
-
 import React, { useState } from "react";
-// Replace with the actual path to your logo
+import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <nav className="p-6">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          {/* Replace text with logo */}
           <img
             src="./images/foam-experts-logo.png"
             alt="Logo"
-            className=" h-16 w-auto"
+            className="h-16 w-auto"
           />
         </div>
 
-        {/* Navigation Links for Medium and Larger Screens */}
         <div className="hidden md:flex space-x-10">
           <a
-            href="#"
+            href="/"
             className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
           >
             Home
           </a>
 
-          <a
-            href="#"
-            className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
-          >
-            About Us
-          </a>
-
-          <a
-            href="#"
+          <Link
+            to="services"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
             className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
           >
             Services
-          </a>
-          <a
-            href="#"
+          </Link>
+
+          {/* Dropdown button for Packages */}
+          <div className="relative group">
+            <button
+              onClick={toggleDropdown}
+              className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4 flex items-center"
+            >
+              Packages
+              <svg
+                className="w-4 h-4 ml-1 group-hover:text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            {/* Dropdown menu */}
+            {isDropdownOpen && (
+              <div className="absolute top-12  z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul className="p-2 text-sm">
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                    >
+                      Exterior Detailing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                    >
+                      Interior Detailing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                    >
+                      Ceramic Coating
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
             className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
           >
-            Packages
-          </a>
-          <a
-            href="#"
+            About Us
+          </Link>
+
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
             className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Responsive Menu Button for Small Screens */}
@@ -95,35 +159,64 @@ const NavBar = () => {
       {isMenuOpen && (
         <div className="md:hidden mt-2">
           <a
-            href="#"
+            href="/"
             className="block text-center text-black hover:text-gray-300 py-2"
           >
             Home
           </a>
-          <a
-            href="#"
-            className="block text-center text-black hover:text-gray-300 py-2"
-          >
-            About Us
-          </a>
-          <a
-            href="#"
+          <Link
+            to="services"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
             className="block text-center text-black hover:text-gray-300 py-2"
           >
             Services
-          </a>
-          <a
-            href="#"
-            className="block text-center text-black hover:text-gray-300 py-2"
-          >
-            Packages
-          </a>
-          <a
-            href="#"
-            className="block text-center text-black hover:text-gray-300 py-2"
-          >
-            Contact
-          </a>
+          </Link>
+
+          {/* Center the "Packages" link and dropdown menu in the responsive menu */}
+          <div className="relative group text-center">
+            <button
+              onClick={toggleDropdown}
+              className="block mx-auto text-black hover:text-gray-300 py-2 relative"
+            >
+              Packages
+            </button>
+
+            {/* Dropdown menu */}
+            {isDropdownOpen && (
+              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-50 bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul className="p-2 text-sm">
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                    >
+                      Exterior Detailing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                    >
+                      Interior Detailing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                    >
+                      Ceramic Coating
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+          {/* Add more responsive menu links as needed */}
         </div>
       )}
     </nav>
