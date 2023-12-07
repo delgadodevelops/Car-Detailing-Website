@@ -1,8 +1,9 @@
 // Home.js
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const DownArrow = () => (
-  <div className="text-white text-center mb-10">
+  <div className=" text-center text-custom-blue mb-10">
     <svg
       className="w-8 h-8 mx-auto animate-bounce"
       fill="none"
@@ -20,64 +21,60 @@ const DownArrow = () => (
   </div>
 );
 
-// Updated ServiceCard Component
-const ServiceCard = ({ imageSrc, title, description, features }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:mx-8">
-    <div className="p-6">
-      <img
-        src={imageSrc}
-        alt={title}
-        className="w-full h-64 object-cover rounded-md shadow-lg"
-      />
-    </div>
-    <div className="p-6">
-      <h3 className="text-2xl font-bold mb-2 text-black">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-      <ul className="mt-4 text-gray-700">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center mb-2">
+const Home = () => {
+  const ServiceCard = ({ imageSrc, title, description, features, path }) => (
+    <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:mx-8">
+      <div className="p-6">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-64 object-cover rounded-md shadow-lg"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-2xl font-bold mb-2 text-black">{title}</h3>
+        <p className="text-gray-600">{description}</p>
+        <ul className="mt-4 text-gray-700">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center mb-2">
+              <svg
+                className="w-4 h-4 mr-2 text-custom-blue"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="8" />
+              </svg>
+              {feature}
+            </li>
+          ))}
+        </ul>
+        <Link to={path} className="mt-4 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-custom-blue rounded-full shadow-md group">
+          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-custom-blue group-hover:translate-x-0 ease">
             <svg
-              className="w-4 h-4 mr-2 text-custom-blue"
-              fill="currentColor"
-              viewBox="0 0 20 20"
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="10" cy="10" r="8" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
             </svg>
-            {feature}
-          </li>
-        ))}
-      </ul>
-      <a
-        href="#_"
-        className="mt-4 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-custom-blue rounded-full shadow-md group"
-      >
-        <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-custom-blue group-hover:translate-x-0 ease">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            ></path>
-          </svg>
-        </span>
-        <span className="absolute flex items-center justify-center w-full h-full text-custom-blue transition-all duration-300 transform group-hover:translate-x-full ease">
-          Learn More
-        </span>
-        <span className="relative invisible">Learn More</span>
-      </a>
+          </span>
+          <span className="absolute flex items-center justify-center w-full h-full text-custom-blue transition-all duration-300 transform group-hover:translate-x-full ease">
+            Learn More
+          </span>
+          <span className="relative invisible">Learn More</span>
+        </Link>
+      </div>
     </div>
-  </div>
-);
+  );
 
-const Home = () => {
   return (
     <div>
       {/* Hero Section */}
@@ -108,39 +105,41 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <div className="bg-custom-blue p-6 lg:p-10">
+      <div className="bg-white p-6 lg:p-10">
         <section id="services" className="container mx-auto my-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white text-center ">
+          <h2 className="text-3xl text-custom-blue lg:text-4xl font-bold text-center ">
             Our Services
           </h2>
 
-          <p className="text-lg text-white text-center  p-5">
-            Elevate your driving experience with our premium car detailing
-            services. From restoring your car's exterior to pampering its
-            interior, we offer a range of specialized services designed to bring
-            out the best in your vehicle. Explore our offerings below and treat
-            your car to the care it deserves.
+          <p className="text-lg text-gray-400 text-center p-5">
+
+          Elevate your ride with our premium car detailing services. From meticulous hand wash and wax to deep-cleaning interiors, we specialize in paint correction and ceramic coating. Experience excellence in automotive care with quality, and satisfaction. Discover our services today!
           </p>
+
+          {/* DownArrow component */}
           <DownArrow />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service Card 1 */}
             <ServiceCard
-              imageSrc="/images/exterior.jpg"
-              title="Exterior Detailing"
+              imageSrc="/images/Paint Correction.jpg"
+              title="Paint Correction"
               description="Restore your car's exterior to its showroom glory with our meticulous detailing services."
               features={[
-                "UV Protection",
-                "Paint Restoration",
-                "Wheel Cleaning",
+                "1 Step & 2 Step Paint Correction",
+                "Removal of light & deep swirl marks",
+                "Restore showroom shine",
               ]}
+              path="/paint-correction" // Specify the path for the Paint Correction page
             />
 
             {/* Service Card 2 */}
             <ServiceCard
               imageSrc="/images/interior.jpg"
-              title="Interior Detailing"
+              title="Exterior & Interior Detailing"
               description="Experience luxury from the inside out. Our interior detailing ensures a pristine and comfortable driving experience."
               features={["Deep Cleaning", "Leather Treatment", "Odor Removal"]}
+              path="/interior-detailing" // Specify the path for the Interior Detailing page
             />
 
             {/* Service Card 3 */}
@@ -153,6 +152,7 @@ const Home = () => {
                 "Scratch Resistance",
                 "Easy Maintenance",
               ]}
+              path="/ceramic-coating" // Specify the path for the Ceramic Coating page
             />
           </div>
         </section>

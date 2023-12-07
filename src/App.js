@@ -1,23 +1,24 @@
 // App.js
 import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import Home from "./components/pages/Home";
-// import Packages from "./components/pages/Packages";
-// import Services from "./components/pages/Services";
+import PaintCorrection from "./components/pages/PaintCorrection";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <div className="App">
-        <Home />
-        <About />
-        <Contact />
-        {/* <Footer /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/paint-correction" element={<PaintCorrection />} />
+        </Routes>
       </div>
     </Router>
   );

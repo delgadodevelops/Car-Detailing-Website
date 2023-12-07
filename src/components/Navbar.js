@@ -75,7 +75,7 @@ const NavBar = () => {
                       href="#"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
-                      Exterior Detailing
+                     Paint Correction
                     </a>
                   </li>
                   <li>
@@ -83,7 +83,7 @@ const NavBar = () => {
                       href="#"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
-                      Interior Detailing
+                      Exterior & Interior Detailing
                     </a>
                   </li>
                   <li>
@@ -193,7 +193,7 @@ const NavBar = () => {
                       href="#"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
-                      Exterior Detailing
+                      Paint Correction
                     </a>
                   </li>
                   <li>
@@ -201,7 +201,7 @@ const NavBar = () => {
                       href="#"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
-                      Interior Detailing
+                      Exterior & Interior Detailing
                     </a>
                   </li>
                   <li>
