@@ -72,10 +72,10 @@ const NavBar = () => {
                 <ul className="p-2 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/paint-correction"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
-                     Paint Correction
+                      Paint Correction
                     </a>
                   </li>
                   <li>
@@ -190,7 +190,7 @@ const NavBar = () => {
                 <ul className="p-2 text-sm">
                   <li>
                     <a
-                      href="#"
+                      href="/paint-correction"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
                       Paint Correction
