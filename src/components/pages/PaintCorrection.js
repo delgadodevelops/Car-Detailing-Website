@@ -1,6 +1,6 @@
 // PaintCorrection.js
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Constant for the Schedule Now button
@@ -83,7 +83,7 @@ const PackageSection = ({
 
 // Arrow component
 const DownArrow = () => (
-  <div className="text-center text-custom-blue mb-">
+  <div className="text-center text-custom-blue  mb-4">
     <svg
       className="w-8 h-8 mx-auto animate-bounce"
       fill="none"
@@ -102,12 +102,16 @@ const DownArrow = () => (
 );
 
 const PaintCorrection = () => {
+  useEffect(() => {
+    // Reset scroll position to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   // Define paths for the Schedule Now links
   const entryLevelPath = "/entry-level";
   const premiumPath = "/premium";
 
   return (
-    <div className="bg-gray-100 p-6">
+    <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
       <div className="container mx-auto">
         {/* Summary Section */}
         {/* Summary Section */}
@@ -116,7 +120,7 @@ const PaintCorrection = () => {
             <span className="text-black font-bold">Paint </span>
             <span className="text-custom-blue font-bold">Correction</span>
           </h1>
-          <p className="text-gray-600 leading-7">
+          <p className=" leading-7">
             Step into Foam Experts Detailing, the intersection of automotive
             excellence and precision. Enhance your vehicle's allure with our
             premium Car Paint Correction Service. Our adept detailing artisans
@@ -132,7 +136,7 @@ const PaintCorrection = () => {
         </div>
 
         {/* Our Packages Title and Arrow */}
-        <h2 className="text-3xl text-custom-blue text-center font-bold mb-4">
+        <h2 className="text-3xl text-custom-blue  text-center font-bold mb-4">
           Our Packages
         </h2>
         <DownArrow />
