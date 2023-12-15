@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DownArrow = () => (
-  <div className="text-center text-custom-blue mb-10">
+  <div className="text-center text-gray-500 mb-10">
     <svg
       className="w-8 h-8 mx-auto animate-bounce"
       fill="none"
@@ -78,11 +78,12 @@ const ServiceCard = ({ imageSrc, title, description, features, path }) => (
 
 const Home = () => (
   <div>
-    <section className="relative flex justify-center h-screen text-black">
+    {/* Hero Section */}
+    <section className="relative flex justify-center h-screen text-black ">
       <div
         className="absolute inset-0 overflow-hidden flex items-center lg:translate-x-1/4"
         style={{
-          backgroundImage: 'url("/images/nsx.jpg")',
+          backgroundImage: 'url("/images/nsx.png")',
           backgroundSize: "cover",
           backgroundPosition: "left",
         }}
@@ -100,12 +101,48 @@ const Home = () => (
         </button>
       </div>
     </section>
-    <div className="bg-white p-6 lg:p-10">
+
+    {/* About Us  */}
+    <section className="flex items-center bg-gradient-to-b from-white to-custom-blue xl:h-screen">
+      <div className="justify-center flex-1 m-8 py-4 lg:py-10 lg:m-40">
+        <div
+          className="relative py-10 bg-center bg-no-repeat bg-cover"
+          style={{
+            backgroundImage: 'url("images/about-us.jpg")',
+            borderRadius: "1.5rem", // Adjust this value for your desired rounded corners
+          }}
+        >
+          <div className="absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 rounded-3xl"></div>
+          <div className="relative z-10 justify-center px-4 py-4 mx-auto max-w-7xl lg:py-28 md:px-7">
+            <div className="flex flex-wrap items-center">
+              <div className="w-full px-10 lg:px-30 mb-10 lg:mb-4">
+                <h2 className="mb-6 text-4xl font-bold text-gray-100 md:text-5xl dark:text-gray-300">
+                  Why Choose Us?
+                </h2>
+                <p className="mb-6 leading-loose text-gray-400 dark:text-gray-400">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                </p>
+                <button className="flex px-6 py-2 font-semibold leading-loose text-gray-100 transition-all duration-300 bg-custom-blue rounded-full hover:bg-sky-600">
+                  Start Today
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Services Section */}
+    <div className="bg-gradient-to-b from-custom-blue to-white p-6 lg:p-10">
       <section id="services" className="container mx-auto my-12">
-        <h2 className="text-3xl text-custom-blue lg:text-4xl font-bold text-center">
+        <h1 class="pl-2 text-center text-3xl font-bold border-custom-blue md:text-5xl ">
           Our Services
-        </h2>
-        <p className="text-lg text-gray-400 text-center p-5">
+        </h1>
+        <p className="text-lg text-gray-500 text-center p-5">
           Elevate your ride with our premium car detailing services...
         </p>
         <DownArrow />
@@ -147,81 +184,3 @@ const Home = () => (
 );
 
 export default Home;
-
-// COMING SOON
-
-// const Home = () => {
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-white">
-//       <div className="text-center p-8 bg-white">
-//         <img
-//           src="/images/foam-experts-logo.png" // Replace with the actual path to your car detailing logo
-//           alt="Car Detailing Logo"
-//           className="mx-auto mb-4 " // Adjust margin and border as needed
-//           style={{ maxWidth: "250px" }} // Adjust the max width of your logo as needed
-//         />
-//         <h1 className="text-4xl font-semibold italic mb-4">COMING SOON</h1>
-//         <p className="text-gray-700 mb-8 w-96">
-//           We are launching soon to provide top-notch car detailing services.
-//           Stay tuned for the grand opening!
-//         </p>
-
-//         <p className="text-sm text-gray-500 mb-6">
-//           Follow us on social media for updates
-//         </p>
-//         <div className="flex justify-center space-x-4 mb-8">
-//           {/* Social media icons with links */}
-//           <a
-//             href="https://www.instagram.com/foam_experts/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <FaInstagram className="text-2xl text-gray-500 hover:text-custom-blue transition duration-300" />
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
-// OPTION 1
-
-// {/* Hero Section */}
-// <section
-//   className="flex justify-center h-screen bg-cover bg-center relative"
-//   style={{
-//     backgroundImage: 'url("images/R32.JPG")', // Update the path to your image
-//   }}
-// >
-//   <div className="absolute inset-0 bg-black opacity-50"></div>
-//   <div className="text-center z-10 text-white p-4 mt-5">
-//     {" "}
-//     {/* Change text-center to text-left */}
-//     <h1 className="text-4xl lg:text-6xl font-bold mb-4 mt-12">
-//       Elevate Your Ride with Professional Detailing
-//     </h1>
-//     <p className="text-lg lg:text-xl mb-4">
-//       Transform your car into a masterpiece.
-//     </p>
-//     <button className="bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-//       Schedule Now
-//     </button>
-//   </div>
-// </section>
-
-// {/* Call to Action */}
-// {/* <section className="bg-gray-800 text-white py-16">
-//   <div className="container mx-auto text-center">
-//     <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-//       Ready to Transform Your Ride?
-//     </h2>
-//     <p className="text-lg lg:text-xl mb-8">
-//       Schedule your appointment now for a premium detailing experience.
-//     </p>
-//     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-//       Schedule Now
-//     </button>
-//   </div>
-// </section> */}
