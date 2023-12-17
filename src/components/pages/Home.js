@@ -21,12 +21,12 @@ const DownArrow = () => (
 );
 
 const ServiceCard = ({ imageSrc, title, description, features, path }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:mx-8">
-    <div className="p-6">
+  <div className="bg-white rounded-3xl overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:mx-8">
+    <div className="p-7">
       <img
         src={imageSrc}
         alt={title}
-        className="w-full h-64 object-cover rounded-md shadow-lg"
+        className="w-full h-64 object-cover rounded-xl shadow-lg"
       />
     </div>
     <div className="p-6">
@@ -103,7 +103,10 @@ const Home = () => (
     </section>
 
     {/* About Us  */}
-    <section className="flex items-center bg-gradient-to-b from-white to-custom-blue xl:h-screen">
+    <section
+      id="about"
+      className="flex items-center bg-gradient-to-b from-white to-custom-blue xl:h-screen"
+    >
       <div className="justify-center flex-1 m-8 py-4 lg:py-10 lg:m-40">
         <div
           className="relative py-10 bg-center bg-no-repeat bg-cover"
