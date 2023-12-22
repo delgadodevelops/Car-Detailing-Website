@@ -209,7 +209,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <a
-                      href="/paint-correction"
+                      href="#"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
                       Exterior & Interior Detailing
