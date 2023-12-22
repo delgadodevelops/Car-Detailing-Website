@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Gallery from "./Gallery";
 
 const DownArrow = () => (
   <div className="text-center text-gray-500 mb-10">
@@ -183,6 +184,14 @@ const Home = () => (
         </div>
       </section>
     </div>
+
+    {/* Gallery Section */}
+    <section
+      id="gallery"
+      className="bg-gradient-to-b from-white to-custom-blue py-12"
+    >
+      <Gallery />
+    </section>
   </div>
 );
 

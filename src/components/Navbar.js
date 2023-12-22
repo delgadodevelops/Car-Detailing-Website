@@ -100,6 +100,17 @@ const NavBar = () => {
           </div>
 
           <Link
+            to="gallery"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
+          >
+            Gallery
+          </Link>
+
+          <Link
             to="about"
             spy={true}
             smooth={true}
@@ -215,6 +226,16 @@ const NavBar = () => {
                 </ul>
               </div>
             )}
+            <Link
+              to="gallery"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="block text-center text-black hover:text-gray-300 py-2"
+            >
+              Gallery
+            </Link>
           </div>
           {/* Add more responsive menu links as needed */}
         </div>
