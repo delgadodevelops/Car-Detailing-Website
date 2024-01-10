@@ -115,7 +115,7 @@ const Services = () => (
             "Scratch Resistance",
             "Easy Maintenance",
           ]}
-          path="/ceramic-coating"
+          path="/ceramic"
         />
       </div>
     </section>

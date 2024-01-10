@@ -39,11 +39,11 @@ const Gallery = () => {
           Our gallery showcases the immaculate results of cars treated to our
           premium detailing services.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
           {imageUrls.map((imageUrl, index) => (
             <div
               key={index}
-              className="relative group overflow-hidden rounded-3xl"
+              className="relative group overflow-hidden rounded-3xl shadow-lg"
             >
               <img
                 className="w-full h-full object-cover transform scale-100 transition-transform duration-300 hover:scale-105 cursor-pointer"

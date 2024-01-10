@@ -38,7 +38,7 @@ const PackageSection = ({
   alt,
   title,
   description,
-  carMidsizePrice,
+  coupeSedanPrice,
   oversizePrice,
   to,
 }) => (
@@ -69,10 +69,10 @@ const PackageSection = ({
     <div className="mb-4">
       <ul className="list-disc list-inside text-custom-blue">
         <li className="text-lg font-semibold mb-2">
-          Cars & Midsize: {carMidsizePrice}
+          Coupes & Sedans: {coupeSedanPrice}
         </li>
         <li className="text-lg font-semibold mb-2">
-          Oversize: {oversizePrice}
+          SUV & Oversize: {oversizePrice}
         </li>
       </ul>
     </div>
@@ -149,8 +149,8 @@ const PaintCorrection = () => {
             alt="Entry Level Package"
             title="Entry Level Package"
             description="With our entry-level package, we execute a meticulous single-step paint correction procedure utilizing a gentle compound. This method effectively eliminates a majority of minor scratches and swirl marks from your vehicle's paint surface. Not only does this meticulous process restore your car's original luster, but it also revitalizes the overall appearance of your vehicle's paint finish. To further safeguard the newly corrected surface, we apply a high-quality sealant at the end of the process. This sealant not only enhances the gloss and depth of the paint but also provides lasting protection against environmental elements, ensuring a longer-lasting, showroom-quality finish for your vehicle."
-            carMidsizePrice="$400"
-            oversizePrice="$500"
+            coupeSedanPrice="$400"
+            oversizePrice="Additional cost starting at $150 and up."
             to={entryLevelPath}
           />
 
@@ -160,8 +160,8 @@ const PaintCorrection = () => {
             alt="Premium Package"
             title="Premium Package"
             description="In our exclusive premium package, we precisely execute a comprehensive three-step paint correction process. The initial step involves the application of a potent abrasive compound designed to effectively eliminate deep scratches and imperfections present in your vehicle's paint. Following this, in the second step, a sophisticated polishing compound is carefully applied to address finer scratches, restoring your vehicle's paint to a showroom-quality shine. To conclude the process, we apply a high-quality sealant, providing long-lasting protection and enhancing the overall luster of your vehicle's finish."
-            carMidsizePrice="$800"
-            oversizePrice="$1000"
+            coupeSedanPrice="$700"
+            oversizePrice="Additional cost starting at $150 and up."
             to={premiumPath}
           />
         </div>
