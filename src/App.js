@@ -2,6 +2,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
 import Ceramic from "./components/pages/Ceramic";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/ceramic" element={<Ceramic />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }

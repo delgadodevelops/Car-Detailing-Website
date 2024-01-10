@@ -3,11 +3,11 @@ import { useState } from "react";
 const Gallery = () => {
   const imageUrls = [
     "./images/bmw.jpeg",
+    "./images/bmw-2.jpg",
     "./images/R32.JPG",
     "./images/mercedes.JPEG",
-    "./images/mercedes.JPEG",
-    "./images/bmw.jpeg",
-    "./images/R32.JPG",
+    "./images/mercedes-2.jpg",
+    "./images/mk4.JPG",
   ];
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
