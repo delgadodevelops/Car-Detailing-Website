@@ -21,11 +21,19 @@ const About = () => (
                 Why Choose Us?
               </h2>
               <p className="mb-6 leading-loose text-gray-400 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam
+                At Foam Experts, we believe that the beauty of a car lies in its
+                details. Our passion for vehicles drives us to provide unmatched
+                attention to every aspect of our detailing process. We
+                understand that a car is more than just a mode of transport;
+                it's a statement of personal style and pride. That's why, at
+                Foam Experts, we dedicate ourselves to ensure every customer
+                leaves with a car that's not just clean, but meticulously cared
+                for. Our commitment to customer satisfaction is at the core of
+                our service. We listen, we care, and we deliver excellence in
+                every detail, guaranteeing a personalized experience that sets
+                us apart. Choose Foam Experts, where our passion for cars and
+                commitment to excellence combine to provide a detailing
+                experience that truly stands out.
               </p>
               <button className="flex px-6 py-2 font-semibold leading-loose text-gray-100 transition-all duration-300 bg-custom-blue rounded-full hover:bg-sky-600">
                 Start Today
