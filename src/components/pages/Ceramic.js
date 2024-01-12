@@ -220,7 +220,7 @@ const Ceramic = () => {
             imagePath="/images/Paint Correction Stage 2.jpeg"
             alt="Elite Package"
             title="Elite Package"
-            subtitle="NANO GRAPHENE Coating by ARTDSHINE | 7 year Durability"
+            subtitle="NANO GRAPHENE Coating by ARTDESHINE | 7 year Durability"
             description="Graphene, a one-atom-thick material, stands out as the lightest, strongest, and thinnest known substance, offering exceptional properties ideal for automotive coatings. However, its application is challenging due to the need for advanced techniques to ensure even dispersion in liquids, crucial for effective coating use.The ultimate coating solution to reducing etching, spotting, watermark issues and corrosion."
             coupeSedanPrice="$2100"
             oversizePrice="Additional cost starting at $300 and up."
