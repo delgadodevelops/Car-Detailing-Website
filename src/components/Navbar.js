@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { Link } from "react-scroll";
 
 const NavBar = () => {
@@ -200,12 +201,12 @@ const NavBar = () => {
               <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-50 bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-44">
                 <ul className="p-2 text-sm">
                   <li>
-                    <a
-                      href="/paint-correction"
+                    <RouterLink
+                      to="/paint-correction"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
                       Paint Correction
-                    </a>
+                    </RouterLink>
                   </li>
                   <li>
                     <a
@@ -216,12 +217,12 @@ const NavBar = () => {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/ceramic"
+                    <RouterLink
+                      to="/ceramic"
                       className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
                     >
                       Ceramic Coating
-                    </a>
+                    </RouterLink>
                   </li>
                 </ul>
               </div>

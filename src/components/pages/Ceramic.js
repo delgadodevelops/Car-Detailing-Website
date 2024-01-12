@@ -132,7 +132,7 @@ const Ceramic = () => {
     <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
       <div className="container mx-auto">
         {/* Summary Section */}
-        <div className=" mb-8 p-4">
+        <div className=" mb- p-4">
           <h1 className="text-6xl text-center mb-8">
             <span className="text-black font-bold">Ceramic </span>
             <span className="text-custom-blue font-bold">Coating</span>
@@ -178,7 +178,7 @@ const Ceramic = () => {
         <DownArrow />
 
         {/* Packages Section */}
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8 mb-10">
           {/* Entry Level Package */}
           <PackageSection
             imagePath="/images/Paint Correction Stage 1.jpg"
