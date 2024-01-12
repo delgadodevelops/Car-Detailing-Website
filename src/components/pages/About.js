@@ -5,7 +5,7 @@ const About = () => (
     id="about"
     className="flex items-center bg-gradient-to-b from-white to-custom-blue xl:h-screen"
   >
-    <div className="justify-center flex-1 m-6 py-4 lg:py-10 lg:m-56 ">
+    <div className="justify-center flex-1 m-8 py-4 lg:py-10 lg:m-40">
       <div
         className="relative py-10 bg-center bg-no-repeat bg-cover"
         style={{

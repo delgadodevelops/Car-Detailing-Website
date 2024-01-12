@@ -107,7 +107,7 @@ const Services = () => (
           path="/interior-detailing"
         />
         <ServiceCard
-          imageSrc="/images/ceramic.jpg"
+          imageSrc="/images/ceramic-1.jpg"
           title="Ceramic Coating"
           description="Protect your investment with our advanced ceramic coating that enhances and preserves your car's finish."
           features={[

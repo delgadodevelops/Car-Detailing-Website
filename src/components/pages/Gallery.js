@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Gallery = () => {
   const imageUrls = [
-    "./images/bmw.jpeg",
+    "./images/bmw.jpg",
     "./images/bmw-2.jpg",
     "./images/R32.JPG",
     "./images/mercedes.JPEG",
@@ -56,22 +56,22 @@ const Gallery = () => {
         </div>
 
         {selectedImageIndex !== null && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 p-6">
-            <div className="relative max-w-screen-md max-h-screen-3/4 lg:h-screen">
+          <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 p-6">
+            <div className="relative max-w-screen-md max-h-screen-3/4 lg:p-24">
               <span
-                className="absolute top-4 right-4 text-white cursor-pointer text-4xl"
+                className="absolute  right-4 text-white cursor-pointer text-4xl"
                 onClick={closeModal}
               >
                 &times;
               </span>
               <button
-                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 px-4 py-2 rounded-full cursor-pointer"
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800  px-2 lg:px-4 lg:py-2 rounded-full cursor-pointer"
                 onClick={() => navigate(-1)}
               >
                 {"<"}
               </button>
               <button
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 px-4 py-2 rounded-full cursor-pointer"
+                className="absolute top-1/2 right-4 mr-2 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 px-2 lg:px-4 lg:py-2  rounded-full cursor-pointer"
                 onClick={() => navigate(1)}
               >
                 {">"}

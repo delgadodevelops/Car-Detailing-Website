@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./About";
+import Contact from "./Contact";
 import Gallery from "./Gallery";
 import Services from "./Services";
 
@@ -32,6 +33,7 @@ const Home = () => (
     <About />
     <Services />
     <Gallery />
+    <Contact />
   </div>
 );
 

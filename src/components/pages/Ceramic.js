@@ -181,7 +181,7 @@ const Ceramic = () => {
         <div className="grid grid-cols-1 gap-8 mb-10">
           {/* Entry Level Package */}
           <PackageSection
-            imagePath="/images/Paint Correction Stage 1.jpg"
+            imagePath="/images/ceramic-1.jpg"
             alt="Entry Level Package"
             title="Entry Level Package"
             subtitle="Q² ONE EVO by Gyeon | 24 Months Durability"
@@ -193,7 +193,7 @@ const Ceramic = () => {
 
           {/* Standard Package */}
           <PackageSection
-            imagePath="/images/Paint Correction Stage 2.jpeg"
+            imagePath="/images/ceramic-2.jpg"
             alt="Standard Package"
             title="Standard Package"
             subtitle="Q² MOHS EVO by Gyeon | 36+ Months Durability"
@@ -205,7 +205,7 @@ const Ceramic = () => {
 
           {/* Premium Package */}
           <PackageSection
-            imagePath="/images/Paint Correction Stage 2.jpeg"
+            imagePath="/images/ceramic-3.jpg"
             alt="Premium Package"
             title="Premium Package"
             subtitle="Q² SYNCRO EVO by Gyeon | 48+ Months durability"
@@ -217,7 +217,7 @@ const Ceramic = () => {
 
           {/* Elite Package */}
           <PackageSection
-            imagePath="/images/Paint Correction Stage 2.jpeg"
+            imagePath="/images/ceramic-4.jpg"
             alt="Elite Package"
             title="Elite Package"
             subtitle="NANO GRAPHENE Coating by ARTDESHINE | 7 year Durability"
