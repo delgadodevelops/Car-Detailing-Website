@@ -89,6 +89,7 @@ const Services = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <ServiceCard
           imageSrc="/images/Paint Correction.jpg"
+          title="Paint Correction"
           path="/paint-correction"
           scrollTo={0}
           description="Restore your car's exterior to its showroom glory with our meticulous detailing services."
