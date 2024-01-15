@@ -2,12 +2,14 @@
 
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faEnvelope, faPhone, faCogs, faBox, faComment } from '@fortawesome/free-solid-svg-icons';
 
 const AlertModal = ({ isOpen, message, onClose }) => {
   return (
-    <div className={`fixed inset-0  overflow-auto ${isOpen ? "flex" : "hidden"}`}>
+    <div className={`fixed inset-0 overflow-auto ${isOpen ? "flex" : "hidden"}`}>
       <div className="flex items-center mx-auto justify-center min-h-screen">
-        <div className="bg-white  p-8 rounded shadow-lg">
+        <div className="bg-white p-8 rounded shadow-lg">
           <p className="text-lg font-semibold mb-4">{message}</p>
           <button onClick={onClose} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
             Close
@@ -98,43 +100,59 @@ const Contact = () => {
 
   return (
     <div className="bg-gradient-to-b from-custom-blue to-white p-6">
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-md shadow-md">
+      {/* Modern title */}
+      <h1 className="pl-2 text-center text-3xl font-bold border-custom-blue md:text-5xl ">
+        Schedule Your Service
+      </h1>
+      <p className="text-lg text-gray-500 text-center p-5">
+        Let"s get started today!
+      </p>
+
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-3xl shadow-lg">
         <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <FontAwesomeIcon icon={faUser} className="mx-2 text-custom-blue" />
           Name:
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            placeholder="John Doe"
+            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </label>
         <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <FontAwesomeIcon icon={faEnvelope} className="mx-2 text-custom-blue" />
           Email:
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            placeholder="johndoe@foamexdetaling.com"
+            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </label>
         <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <FontAwesomeIcon icon={faPhone} className="mx-2 text-custom-blue" />
           Phone:
           <input
             type="tel"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            placeholder="(123)456-7891"
+            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </label>
         <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <FontAwesomeIcon icon={faCogs} className="mx-2 text-custom-blue" />
           Service Type:
           <select
             name="serviceType"
             value={formData.serviceType}
             onChange={handleChange}
+            placeholder="Select a Service Type"
             className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
           >
             <option value="" disabled>Select a Service Type</option>
@@ -143,12 +161,14 @@ const Contact = () => {
           </select>
         </label>
         <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <FontAwesomeIcon icon={faBox} className="mx-2 text-custom-blue" />
           Package Type:
           <select
             name="packageType"
             value={formData.packageType}
             onChange={handleChange}
             disabled={formData.serviceType === ""}
+            placeholder="Select a Package Type"
             className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
           >
             <option value="" disabled>Select a Package Type</option>
@@ -169,18 +189,20 @@ const Contact = () => {
           </select>
         </label>
         <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <FontAwesomeIcon icon={faComment} className="mx-2 text-custom-blue" />
           Message:
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
+            placeholder="Enter your message"
             rows="4"
-            className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
           ></textarea>
         </label>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none"
+          className="w-full bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 focus:outline-none transform transition-transform duration-300 ease-in-out hover:scale-105"
         >
           Submit
         </button>
@@ -193,10 +215,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
-
-
-
-
-
