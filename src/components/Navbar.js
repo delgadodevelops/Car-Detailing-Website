@@ -18,11 +18,13 @@ const NavBar = () => {
     <nav className="p-6">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
+        <RouterLink to="/" className="flex items-center">
           <img
             src="./images/foam-experts-logo.png"
             alt="Logo"
-            className="h-16 w-auto"
+            className="h-14 w-auto"
           />
+        </RouterLink>
         </div>
 
         <div className="hidden md:flex space-x-10">
