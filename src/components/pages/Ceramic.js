@@ -1,5 +1,4 @@
-// PaintCorrection.js
-
+// Import necessary dependencies from React and React Router
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -41,7 +40,7 @@ const PackageSection = ({
   description,
   coupeSedanPrice,
   oversizePrice,
-  to,
+  to, // Add to prop for the Schedule Now button
 }) => (
   <div className="bg-white p-6 rounded-xl shadow-xl">
     <img
@@ -124,9 +123,10 @@ const Ceramic = () => {
     // Reset scroll position to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
+
   // Define paths for the Schedule Now links
-  const entryLevelPath = "/entry-level";
-  const premiumPath = "/premium";
+
+  const contactPath = "/contact"; // Add the path for the Contact page
 
   return (
     <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
@@ -185,10 +185,10 @@ const Ceramic = () => {
             alt="Entry Level Package"
             title="Entry Level Package"
             subtitle="Q² ONE EVO by Gyeon | 24 Months Durability"
-            description="The Q² ONE EVO coating offers an exquisite candy gloss finish coupled with enduring protection. Engineered for longevity, it boast a durability of over 24 moths, making it a formidable choice in this category. This product exemplifies professional-grade quality in surface protection technology."
+            description="The Q² ONE EVO coating offers an exquisite candy gloss finish coupled with enduring protection. Engineered for longevity, it boasts a durability of over 24 months, making it a formidable choice in this category. This product exemplifies professional-grade quality in surface protection technology."
             coupeSedanPrice="$1200"
             oversizePrice="Additional cost starting at $300 and up."
-            to={entryLevelPath}
+            to={contactPath}
           />
 
           {/* Standard Package */}
@@ -197,10 +197,10 @@ const Ceramic = () => {
             alt="Standard Package"
             title="Standard Package"
             subtitle="Q² MOHS EVO by Gyeon | 36+ Months Durability"
-            description="The Q² MOHS EVO coating, developed by GYEON, is a breakthrough in ceramic coatings. By infusing fluorine into polysilazane, it offers high gloss, durable, and chemically resistant single layer coating with exponential water repellency. This product sets a new standard in paint protection technology."
+            description="The Q² MOHS EVO coating, developed by GYEON, is a breakthrough in ceramic coatings. By infusing fluorine into polysilazane, it offers high gloss, durable, and chemically resistant single-layer coating with exponential water repellency. This product sets a new standard in paint protection technology."
             coupeSedanPrice="$1500"
             oversizePrice="Additional cost starting at $300 and up."
-            to={premiumPath}
+            to={contactPath}
           />
 
           {/* Premium Package */}
@@ -209,10 +209,10 @@ const Ceramic = () => {
             alt="Premium Package"
             title="Premium Package"
             subtitle="Q² SYNCRO EVO by Gyeon | 48+ Months durability"
-            description="The Q² SYNCRO EVO represents the pinnacle of GYEON's multi-layer ceramic paint coating technology. This sophisticated kit merges the newly developed Q² MOHS EVO as its base with the innovative Q² SKIN EVO top coat. Engineered for optimal endurance, the base coating ensures unparalleled durability and protection. Concurrently, the top coat enhances gloss and color, significantly augmenting the aesthetic appeal. Additionally, the combination boasts outstanding self-cleaning and hydrophobic properties, setting a new benchmark in ceramic coating performance."
+            description="The Q² SYNCRO EVO represents the pinnacle of GYEON's multi-layer ceramic paint coating technology. This sophisticated kit merges the newly developed Q² MOHS EVO as its base with the innovative Q² SKIN EVO top coat. Engineered for optimal endurance, the base coating ensures unparalleled durability and protection. Concurrently, the top coat enhances gloss and color, significantly augmenting the aesthetic appeal. Additionally, the combination boasts outstanding self-cleaning and hydrophobic properties, setting a new benchmark in ceramic coating performance."
             coupeSedanPrice="$1800"
             oversizePrice="Additional cost starting at $300 and up."
-            to={premiumPath}
+            to={contactPath}
           />
 
           {/* Elite Package */}
@@ -221,10 +221,10 @@ const Ceramic = () => {
             alt="Elite Package"
             title="Elite Package"
             subtitle="NANO GRAPHENE Coating by ARTDESHINE | 7 year Durability"
-            description="Graphene, a one-atom-thick material, stands out as the lightest, strongest, and thinnest known substance, offering exceptional properties ideal for automotive coatings. However, its application is challenging due to the need for advanced techniques to ensure even dispersion in liquids, crucial for effective coating use.The ultimate coating solution to reducing etching, spotting, watermark issues and corrosion."
+            description="Graphene, a one-atom-thick material, stands out as the lightest, strongest, and thinnest known substance, offering exceptional properties ideal for automotive coatings. However, its application is challenging due to the need for advanced techniques to ensure even dispersion in liquids, crucial for effective coating use. The ultimate coating solution to reducing etching, spotting, watermark issues and corrosion."
             coupeSedanPrice="$2100"
             oversizePrice="Additional cost starting at $300 and up."
-            to={premiumPath}
+            to={contactPath}
           />
         </div>
       </div>

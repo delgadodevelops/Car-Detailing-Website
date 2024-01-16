@@ -1,6 +1,6 @@
 // Contact.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import emailjs from "emailjs-com";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faPhone, faCogs, faBox, faComment } from '@fortawesome/free-solid-svg-icons';
@@ -21,6 +21,12 @@ const AlertModal = ({ isOpen, message, onClose }) => {
 };
 
 const Contact = () => {
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -99,13 +105,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-custom-blue to-white p-6">
+    <div className="bg-gradient-to-b from-custom-blue to-white px-6 py-16">
       {/* Modern title */}
       <h1 className="pl-2 text-center text-3xl font-bold border-custom-blue md:text-5xl ">
         Schedule Your Service
       </h1>
       <p className="text-lg text-gray-500 text-center p-5">
-        Let"s get started today!
+        Let"s get started
       </p>
 
       <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-3xl shadow-lg">

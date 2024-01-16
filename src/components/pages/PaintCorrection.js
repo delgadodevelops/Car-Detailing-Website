@@ -107,8 +107,7 @@ const PaintCorrection = () => {
     window.scrollTo(0, 0);
   }, []);
   // Define paths for the Schedule Now links
-  const entryLevelPath = "/entry-level";
-  const premiumPath = "/premium";
+  const contactPath = "/contact"; 
 
   return (
     <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
@@ -151,7 +150,7 @@ const PaintCorrection = () => {
             description="With our entry-level package, we execute a meticulous single-step paint correction procedure utilizing a gentle compound. This method effectively eliminates a majority of minor scratches and swirl marks from your vehicle's paint surface. Not only does this meticulous process restore your car's original luster, but it also revitalizes the overall appearance of your vehicle's paint finish. To further safeguard the newly corrected surface, we apply a high-quality sealant at the end of the process. This sealant not only enhances the gloss and depth of the paint but also provides lasting protection against environmental elements, ensuring a longer-lasting, showroom-quality finish for your vehicle."
             coupeSedanPrice="$400"
             oversizePrice="Additional cost starting at $150 and up."
-            to={entryLevelPath}
+            to={contactPath}
           />
 
           {/* Premium Package */}
@@ -162,7 +161,7 @@ const PaintCorrection = () => {
             description="In our exclusive premium package, we precisely execute a comprehensive three-step paint correction process. The initial step involves the application of a potent abrasive compound designed to effectively eliminate deep scratches and imperfections present in your vehicle's paint. Following this, in the second step, a sophisticated polishing compound is carefully applied to address finer scratches, restoring your vehicle's paint to a showroom-quality shine. To conclude the process, we apply a high-quality sealant, providing long-lasting protection and enhancing the overall luster of your vehicle's finish."
             coupeSedanPrice="$700"
             oversizePrice="Additional cost starting at $150 and up."
-            to={premiumPath}
+            to={contactPath}
           />
         </div>
       </div>
