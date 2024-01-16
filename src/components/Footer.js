@@ -8,7 +8,7 @@ const Footer = () => {
           <div class="px-5 py-2">
             {/* <a
               href="#"
-              class="text-base leading-6 text-gray-500 hover:text-gray-900"
+              class="text-base leading-6 text-custom-blue hover:text-gray-900"
             >
               About
             </a>
@@ -16,7 +16,7 @@ const Footer = () => {
           <div class="px-5 py-2">
             <a
               href="#"
-              class="text-base leading-6 text-gray-500 hover:text-gray-900"
+              class="text-base leading-6 text-custom-blue hover:text-gray-900"
             >
               Blog
             </a>
@@ -24,7 +24,7 @@ const Footer = () => {
           <div class="px-5 py-2">
             <a
               href="#"
-              class="text-base leading-6 text-gray-500 hover:text-gray-900"
+              class="text-base leading-6 text-custom-blue hover:text-gray-900"
             >
               Team
             </a>
@@ -32,7 +32,7 @@ const Footer = () => {
           <div class="px-5 py-2">
             <a
               href="#"
-              class="text-base leading-6 text-gray-500 hover:text-gray-900"
+              class="text-base leading-6 text-custom-blue hover:text-gray-900"
             >
               Pricing
             </a>
@@ -40,7 +40,7 @@ const Footer = () => {
           <div class="px-5 py-2">
             <a
               href="#"
-              class="text-base leading-6 text-gray-500 hover:text-gray-900"
+              class="text-base leading-6 text-custom-blue hover:text-gray-900"
             >
               Contact
             </a>
@@ -48,7 +48,7 @@ const Footer = () => {
           <div class="px-5 py-2">
             <a
               href="#"
-              class="text-base leading-6 text-gray-500 hover:text-gray-900"
+              class="text-base leading-6 text-custom-blue hover:text-gray-900"
             >
               Terms
             </a> */}
@@ -57,7 +57,7 @@ const Footer = () => {
         <div class="flex justify-center mt-8 space-x-6">
           <a
             href="mailto:info@foamexdetailing.com"
-            class="text-gray-400 hover:text-gray-500"
+            class="text-gray-400 hover:text-custom-blue"
           >
             <span class="sr-only">Email</span>
             <svg
@@ -77,7 +77,7 @@ const Footer = () => {
 
           <a
             href="https://www.instagram.com/foam_experts/"
-            class="text-gray-400 hover:text-gray-500"
+            class="text-gray-400 hover:text-custom-blue"
           >
             <span class="sr-only">Instagram</span>
             <svg

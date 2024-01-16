@@ -33,7 +33,7 @@ const About = () => (
                 every detail, guaranteeing a personalized experience that sets
                 us apart. Choose Foam Experts, where our passion for cars and
                 commitment to excellence combine to provide a detailing
-                experience that truly stands out.
+                experience that truly stands out.
               </p>
               <button className="flex px-6 py-2 font-semibold leading-loose text-gray-100 transition-all duration-300 bg-custom-blue rounded-full hover:bg-sky-600">
                 Start Today
@@ -46,4 +46,4 @@ const About = () => (
   </section>
 );
 
-export default About;
+export default React.memo(About);

@@ -1,17 +1,29 @@
-// Contact.js
-
-import React, { useState, useEffect  } from "react";
+import {
+  faBox,
+  faCheck,
+  faCogs,
+  faComment,
+  faEnvelope,
+  faPhone,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import emailjs from "emailjs-com";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faPhone, faCogs, faBox, faComment } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from "react";
 
+// AlertModal component for displaying messages
 const AlertModal = ({ isOpen, message, onClose }) => {
   return (
-    <div className={`fixed inset-0 overflow-auto ${isOpen ? "flex" : "hidden"}`}>
+    <div
+      className={`fixed inset-0 overflow-auto ${isOpen ? "flex" : "hidden"}`}
+    >
       <div className="flex items-center mx-auto justify-center min-h-screen">
         <div className="bg-white p-8 rounded shadow-lg">
           <p className="text-lg font-semibold mb-4">{message}</p>
-          <button onClick={onClose} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          <button
+            onClick={onClose}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
             Close
           </button>
         </div>
@@ -21,12 +33,12 @@ const AlertModal = ({ isOpen, message, onClose }) => {
 };
 
 const Contact = () => {
-
+  // Scroll to the top when the component mounts
   useEffect(() => {
-    // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
 
+  // State for form data, modal display, and loading
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,9 +50,13 @@ const Contact = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Update packageType options based on serviceType
     if (name === "serviceType") {
       let updatedPackageTypeOptions = [];
       switch (value) {
@@ -48,12 +64,19 @@ const Contact = () => {
           updatedPackageTypeOptions = ["Entry-Level", "Premium"];
           break;
         case "Ceramic Coating":
-          updatedPackageTypeOptions = ["Entry-Level", "Standard", "Premium", "Elite"];
+          updatedPackageTypeOptions = [
+            "Entry-Level",
+            "Standard",
+            "Premium",
+            "Elite",
+          ];
           break;
         default:
           updatedPackageTypeOptions = [];
           break;
       }
+
+      // Update form data
       setFormData({
         ...formData,
         [name]: value,
@@ -64,42 +87,49 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Sending email using EmailJS
-    emailjs
-      .send("service_8pbzzr9", "template_gukzhjj", formData, "EfGTdTFgjfpRrAh7I")
-      .then((response) => {
-        console.log("Email sent successfully:", response);
-        setModalMessage("Email sent successfully!");
-        setShowModal(true);
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-        setModalMessage("Error sending email. Please try again later.");
-        setShowModal(true);
-      });
+    // Check if all fields are filled out
+    const isFormValid = Object.values(formData).every(
+      (value) => value.trim() !== ""
+    );
 
-    // You can also handle the form submission logic here, like storing in a database
+    if (!isFormValid) {
+      setModalMessage("Please fill out all fields before submitting.");
+      setShowModal(true);
+      return;
+    }
 
-    // Example using fetch
-    fetch("your-backend-api-endpoint", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Backend response:", data);
-      })
-      .catch((error) => {
-        console.error("Backend error:", error);
-      });
+    // Set loading to true during form submission
+    setLoading(true);
+
+    try {
+      // Sending email using EmailJS
+      const emailResponse = await emailjs.send(
+        "service_8pbzzr9",
+        "template_gukzhjj",
+        formData,
+        "EfGTdTFgjfpRrAh7I"
+      );
+
+      console.log("Email sent successfully:", emailResponse);
+      setModalMessage("Email sent successfully!");
+      setShowModal(true);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setModalMessage("Error sending email. Please try again later.");
+      setShowModal(true);
+    } finally {
+      // Set loading back to false after form submission
+      setLoading(false);
+    }
+
+    // Backend submission logic...
   };
 
+  // Close the modal
   const closeModal = () => {
     setShowModal(false);
   };
@@ -110,12 +140,15 @@ const Contact = () => {
       <h1 className="pl-2 text-center text-3xl font-bold border-custom-blue md:text-5xl ">
         Schedule Your Service
       </h1>
-      <p className="text-lg text-gray-500 text-center p-5">
-        Let"s get started
-      </p>
+      <p className="text-lg text-gray-500 text-center p-5">Let's get started</p>
 
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-3xl shadow-lg">
-        <label className="block text-sm font-semibold text-gray-600 mb-2">
+      {/* Contact Form */}
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-md mx-auto mt-10 p-5 bg-gray-100 rounded-2xl shadow-lg"
+      >
+        {/* Name Input */}
+        <label className="block text-sm font-semibold text-gray-600 my-3">
           <FontAwesomeIcon icon={faUser} className="mx-2 text-custom-blue" />
           Name:
           <input
@@ -124,11 +157,16 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="John Doe"
-            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-3 pl-8 border rounded-2xl focus:outline-none focus:border-blue-500"
           />
         </label>
-        <label className="block text-sm font-semibold text-gray-600 mb-2">
-          <FontAwesomeIcon icon={faEnvelope} className="mx-2 text-custom-blue" />
+
+        {/* Email Input */}
+        <label className="block text-sm font-semibold text-gray-600 my-3">
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className="mx-2 text-custom-blue"
+          />
           Email:
           <input
             type="email"
@@ -136,10 +174,12 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="johndoe@foamexdetaling.com"
-            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-3 pl-8 border rounded-2xl focus:outline-none focus:border-blue-500"
           />
         </label>
-        <label className="block text-sm font-semibold text-gray-600 mb-2">
+
+        {/* Phone Input */}
+        <label className="block text-sm font-semibold text-gray-600 my-3">
           <FontAwesomeIcon icon={faPhone} className="mx-2 text-custom-blue" />
           Phone:
           <input
@@ -148,10 +188,12 @@ const Contact = () => {
             value={formData.phone}
             onChange={handleChange}
             placeholder="(123)456-7891"
-            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-3 pl-8 border rounded-2xl focus:outline-none focus:border-blue-500"
           />
         </label>
-        <label className="block text-sm font-semibold text-gray-600 mb-2">
+
+        {/* Service Type Dropdown */}
+        <label className="block text-sm font-semibold text-gray-600 my-3">
           <FontAwesomeIcon icon={faCogs} className="mx-2 text-custom-blue" />
           Service Type:
           <select
@@ -159,14 +201,18 @@ const Contact = () => {
             value={formData.serviceType}
             onChange={handleChange}
             placeholder="Select a Service Type"
-            className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-3 pl-8 border rounded-2xl focus:outline-none focus:border-blue-500"
           >
-            <option value="" disabled>Select a Service Type</option>
+            <option value="" disabled>
+              Select a Service Type
+            </option>
             <option value="Paint Correction">Paint Correction</option>
             <option value="Ceramic Coating">Ceramic Coating</option>
           </select>
         </label>
-        <label className="block text-sm font-semibold text-gray-600 mb-2">
+
+        {/* Package Type Dropdown */}
+        <label className="block text-sm font-semibold text-gray-600 my-3">
           <FontAwesomeIcon icon={faBox} className="mx-2 text-custom-blue" />
           Package Type:
           <select
@@ -175,9 +221,11 @@ const Contact = () => {
             onChange={handleChange}
             disabled={formData.serviceType === ""}
             placeholder="Select a Package Type"
-            className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-3 pl-8 border rounded-2xl focus:outline-none focus:border-blue-500"
           >
-            <option value="" disabled>Select a Package Type</option>
+            <option value="" disabled>
+              Select a Package Type
+            </option>
             {formData.serviceType === "Paint Correction" && (
               <>
                 <option value="Entry-Level">Entry-Level</option>
@@ -194,7 +242,9 @@ const Contact = () => {
             )}
           </select>
         </label>
-        <label className="block text-sm font-semibold text-gray-600 mb-2">
+
+        {/* Message Textarea */}
+        <label className="block text-sm font-semibold text-gray-600 my-3">
           <FontAwesomeIcon icon={faComment} className="mx-2 text-custom-blue" />
           Message:
           <textarea
@@ -203,19 +253,36 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Enter your message"
             rows="4"
-            className="w-full mt-1 p-2 pl-8 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full mt-1 p-2 pl-8 border rounded-2xl focus:outline-none focus:border-blue-500"
           ></textarea>
         </label>
+
+        {/* Submit Button with loading animation */}
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 focus:outline-none transform transition-transform duration-300 ease-in-out hover:scale-105"
+          disabled={loading}
         >
-          Submit
+          {loading ? (
+            <div className="flex items-center">
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              Submitting...
+            </div>
+          ) : (
+            <>
+              <FontAwesomeIcon icon={faCheck} className="mr-2" />
+              Submit
+            </>
+          )}
         </button>
       </form>
 
       {/* Display the AlertModal component */}
-      <AlertModal isOpen={showModal} message={modalMessage} onClose={closeModal} />
+      <AlertModal
+        isOpen={showModal}
+        message={modalMessage}
+        onClose={closeModal}
+      />
     </div>
   );
 };
