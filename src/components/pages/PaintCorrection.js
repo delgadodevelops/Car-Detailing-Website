@@ -42,7 +42,7 @@ const PackageSection = ({
   oversizePrice,
   to,
 }) => (
-  <div className="bg-white p-6 rounded-xl shadow-xl">
+  <div className="bg-white p-6 xl:w-1/2 mx-auto rounded-xl shadow-xl">
     <img
       src={imagePath}
       alt={alt}
@@ -107,19 +107,18 @@ const PaintCorrection = () => {
     window.scrollTo(0, 0);
   }, []);
   // Define paths for the Schedule Now links
-  const contactPath = "/contact"; 
+  const contactPath = "/contact";
 
   return (
     <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
       <div className="container mx-auto">
         {/* Summary Section */}
-        {/* Summary Section */}
         <div className="text-center mb-8 p-4">
-          <h1 className="text-6xl mb-6">
+          <h1 className="text-6xl mb-8">
             <span className="text-black font-bold">Paint </span>
             <span className="text-custom-blue font-bold">Correction</span>
           </h1>
-          <p className=" leading-7">
+          <p className=" leading-6 mb-8">
             Step into Foam Experts Detailing, the intersection of automotive
             excellence and precision. Enhance your vehicle's allure with our
             premium Car Paint Correction Service. Our adept detailing artisans

@@ -132,7 +132,7 @@ const Ceramic = () => {
     <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
       <div className="container mx-auto">
         {/* Summary Section */}
-        <div className=" mb- p-4">
+        <div className=" mb-8 p-4">
           <h1 className="text-6xl text-center mb-8">
             <span className="text-black font-bold">Ceramic </span>
             <span className="text-custom-blue font-bold">Coating</span>

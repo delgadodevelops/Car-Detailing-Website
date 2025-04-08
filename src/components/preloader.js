@@ -1,46 +1,58 @@
-import React, { useEffect, useState } from "react";
-import "./Preloader.css";
+import { motion } from "framer-motion";
+import React from "react";
 
-const Preloader = () => {
-  const [fadeIn, setFadeIn] = useState(false);
-  const [fadeOut, setFadeOut] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setFadeIn(true);
-    }, 1000); // Delay in milliseconds before the text fades in
-
-    const timer2 = setTimeout(() => {
-      setFadeOut(true);
-    }, 3000); // Delay in milliseconds before the entire preloader fades out
-
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(timer2);
-    };
-  }, []);
-
-  return (
-    <div
-      className={`preloader ${fadeIn ? "fade-in" : ""} ${
-        fadeOut ? "fade-out" : ""
-      }`}
-    >
-      <div className="preloader-content">
-        <div className="logo-container ml-10">
-          <img
-            className={`logo ${fadeIn ? "swipe-in" : ""} w-32 h-32`} // Set width and height to 32 pixels
-            src="./images/dd-logo.png"
-            alt="Logo"
-          />
-        </div>
-        <h1 className=" text-custom-orange flex items-center justify-center">
-          <span className=" mr-2 animate-spin text-custom-orange">&#9696;</span>{" "}
-          Portfolio Loading ...
-        </h1>
-      </div>
-    </div>
-  );
+const preloaderVariants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+  hidden: {
+    opacity: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
 };
+
+function Preloader() {
+  return (
+    <motion.div
+      className="fixed inset-0 bg-white h-screen flex justify-center items-center z-50"
+      initial="visible"
+      animate="visible"
+      exit="hidden"
+      variants={preloaderVariants}
+    >
+      <div className="flex space-x-3">
+        <motion.span
+          className="w-5 h-5 bg-custom-blue rounded-full"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [1, 0],
+            rotate: [0, 360],
+            transition: { duration: 1, repeat: Infinity },
+          }}
+        />
+        <motion.span
+          className="w-5 h-5 bg-custom-blue rounded-full"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [1, 0],
+            rotate: [0, 360],
+            transition: { duration: 1, repeat: Infinity, delay: 0.2 },
+          }}
+        />
+        <motion.span
+          className="w-5 h-5 bg-custom-blue rounded-full"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [1, 0],
+            rotate: [0, 360],
+            transition: { duration: 1, repeat: Infinity, delay: 0.4 },
+          }}
+        />
+      </div>
+    </motion.div>
+  );
+}
 
 export default Preloader;
