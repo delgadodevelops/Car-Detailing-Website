@@ -18,16 +18,16 @@ const NavBar = () => {
     <nav className="p-6">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-        <RouterLink to="/" className="flex items-center">
-          <img
-            src="./images/foam-experts-logo.png"
-            alt="Logo"
-            className="h-14 w-auto"
-          />
-        </RouterLink>
+          <RouterLink to="/" className="flex items-center">
+            <img
+              src="./images/foam-experts-logo.png"
+              alt="Logo"
+              className="h-14 w-auto"
+            />
+          </RouterLink>
         </div>
 
-        <div className="hidden md:flex space-x-10">
+        <div className="hidden md:flex space-x-10 items-center">
           <a
             href="/"
             className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
@@ -46,7 +46,6 @@ const NavBar = () => {
             Services
           </Link>
 
-          {/* Dropdown button for Packages */}
           <div className="relative group">
             <button
               onClick={toggleDropdown}
@@ -69,14 +68,13 @@ const NavBar = () => {
               </svg>
             </button>
 
-            {/* Dropdown menu */}
             {isDropdownOpen && (
-              <div className="absolute top-12  z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+              <div className="absolute top-12 z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                 <ul className="p-2 text-sm">
                   <li>
                     <a
                       href="/paint-correction"
-                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg text-gray-700 hover:text-white"
                     >
                       Paint Correction
                     </a>
@@ -84,7 +82,7 @@ const NavBar = () => {
                   <li>
                     <a
                       href="#"
-                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg text-gray-700 hover:text-white"
                     >
                       Exterior & Interior Detailing
                     </a>
@@ -92,7 +90,7 @@ const NavBar = () => {
                   <li>
                     <a
                       href="/ceramic"
-                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg text-gray-700 hover:text-white"
                     >
                       Ceramic Coating
                     </a>
@@ -124,19 +122,14 @@ const NavBar = () => {
             About Us
           </Link>
 
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="text-black font-bold transition duration-300 hover:bg-custom-blue hover:text-white rounded-lg py-2 px-4"
+          <RouterLink
+            to="/contact"
+            className="bg-custom-blue hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full transition duration-300 shadow-md"
           >
-            Contact
-          </Link>
+            Book Now
+          </RouterLink>
         </div>
 
-        {/* Responsive Menu Button for Small Screens */}
         <div className="md:hidden">
           <button
             className="text-black focus:outline-none"
@@ -169,7 +162,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Responsive Menu for Small Screens */}
       {isMenuOpen && (
         <div className="md:hidden mt-2">
           <a
@@ -189,7 +181,6 @@ const NavBar = () => {
             Services
           </Link>
 
-          {/* Center the "Packages" link and dropdown menu in the responsive menu */}
           <div className="relative group text-center">
             <button
               onClick={toggleDropdown}
@@ -198,14 +189,13 @@ const NavBar = () => {
               Packages
             </button>
 
-            {/* Dropdown menu */}
             {isDropdownOpen && (
               <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-50 bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-44">
                 <ul className="p-2 text-sm">
                   <li>
                     <RouterLink
                       to="/paint-correction"
-                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg text-gray-700 hover:text-white"
                     >
                       Paint Correction
                     </RouterLink>
@@ -213,7 +203,7 @@ const NavBar = () => {
                   <li>
                     <a
                       href="#"
-                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg text-gray-700 hover:text-white"
                     >
                       Exterior & Interior Detailing
                     </a>
@@ -221,7 +211,7 @@ const NavBar = () => {
                   <li>
                     <RouterLink
                       to="/ceramic"
-                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg  text-gray-700 hover:text-white"
+                      className="block px-4 py-2 hover:bg-custom-blue rounded-lg text-gray-700 hover:text-white"
                     >
                       Ceramic Coating
                     </RouterLink>
@@ -229,6 +219,7 @@ const NavBar = () => {
                 </ul>
               </div>
             )}
+
             <Link
               to="gallery"
               spy={true}
@@ -239,8 +230,23 @@ const NavBar = () => {
             >
               Gallery
             </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="block text-center text-black hover:text-gray-300 py-2"
+            >
+              About Us
+            </Link>
+            <RouterLink
+              to="/contact"
+              className="block text-center font-semibold bg-custom-blue hover:bg-blue-700 text-white py-2 px-4 rounded-full mx-8 my-2 transition duration-300"
+            >
+              Book Now
+            </RouterLink>
           </div>
-          {/* Add more responsive menu links as needed */}
         </div>
       )}
     </nav>

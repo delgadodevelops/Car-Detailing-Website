@@ -1,9 +1,9 @@
-// PaintCorrection.js
-
+// components/pages/PaintCorrection.js
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-// Constant for the Schedule Now button
+// Button Component
 const LearnMoreButton = ({ to }) => (
   <Link
     to={to}
@@ -32,7 +32,7 @@ const LearnMoreButton = ({ to }) => (
   </Link>
 );
 
-// Reusable Package Section component
+// Package Component
 const PackageSection = ({
   imagePath,
   alt,
@@ -49,20 +49,11 @@ const PackageSection = ({
       className="w-full h-52 object-cover mb-4 rounded-xl"
     />
     <h2 className="flex items-center text-2xl font-semibold mb-4">
-      {title === "Entry Level Package" && (
-        <img
-          src="/icons/car.svg"
-          alt="Car Icon"
-          className="w-10 h-10 p-1 bg-custom-blue rounded-full mr-2"
-        />
-      )}
-      {title === "Premium Package" && (
-        <img
-          src="/icons/car.svg"
-          alt="Car Side Icon"
-          className="w-10 h-10 p-1 bg-custom-blue rounded-full mr-2"
-        />
-      )}
+      <img
+        src="/icons/car.svg"
+        alt="Car Icon"
+        className="w-10 h-10 p-1 bg-custom-blue rounded-full mr-2"
+      />
       {title}
     </h2>
     <p className="text-gray-700 mb-4">{description}</p>
@@ -76,14 +67,13 @@ const PackageSection = ({
         </li>
       </ul>
     </div>
-    {/* Schedule Now Button */}
     <LearnMoreButton to={to} />
   </div>
 );
 
-// Arrow component
+// Arrow Component
 const DownArrow = () => (
-  <div className="text-center text-custom-blue  mb-4">
+  <div className="text-center text-custom-blue mb-4">
     <svg
       className="w-8 h-8 mx-auto animate-bounce"
       fill="none"
@@ -103,14 +93,37 @@ const DownArrow = () => (
 
 const PaintCorrection = () => {
   useEffect(() => {
-    // Reset scroll position to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
-  // Define paths for the Schedule Now links
+
   const contactPath = "/contact";
 
   return (
-    <div className="bg-gradient-to-b from-white to-custom-blue  p-6 min-h-screen">
+    <div className="bg-gradient-to-b from-white to-custom-blue p-6 min-h-screen">
+      <Helmet>
+        <title>Paint Correction Services | Foam Experts Detailing</title>
+        <meta
+          name="description"
+          content="Eliminate swirl marks and restore your car’s paint to perfection with our paint correction packages. High-gloss, high-quality, and long-lasting protection."
+        />
+        <meta
+          property="og:title"
+          content="Paint Correction Services | Foam Experts Detailing"
+        />
+        <meta
+          property="og:description"
+          content="Choose from entry-level or premium paint correction. Perfect your car’s exterior with precision detailing and protective sealants."
+        />
+        <meta
+          property="og:url"
+          content="https://www.foamexdetailing.com/paint-correction"
+        />
+        <meta
+          property="og:image"
+          content="https://www.foamexdetailing.com/images/og-preview.webp"
+        />
+      </Helmet>
+
       <div className="container mx-auto">
         {/* Summary Section */}
         <div className="text-center mb-8 p-4">
@@ -118,46 +131,38 @@ const PaintCorrection = () => {
             <span className="text-black font-bold">Paint </span>
             <span className="text-custom-blue font-bold">Correction</span>
           </h1>
-          <p className=" leading-6 mb-8">
+          <p className="leading-6 mb-8">
             Step into Foam Experts Detailing, the intersection of automotive
             excellence and precision. Enhance your vehicle's allure with our
             premium Car Paint Correction Service. Our adept detailing artisans
             employ cutting-edge techniques and superior products to eliminate
             imperfections like swirl marks and scratches, revealing a brilliant,
-            showroom-ready finish. At Foam Experts Detailing, we boast
-            meticulous craftsmanship and an unyielding commitment to excellence.
-            Rely on us to rejuvenate your vehicle's paintwork, ensuring it
-            shines with a brilliance that exceeds expectations. Embark on the
-            ultimate automotive detailing journey – opt for Foam Experts
-            Detailing for an impeccable transformation.
+            showroom-ready finish...
           </p>
         </div>
 
         {/* Our Packages Title and Arrow */}
-        <h2 className="text-3xl text-custom-blue  text-center font-bold mb-4">
+        <h2 className="text-3xl text-custom-blue text-center font-bold mb-4">
           Our Packages
         </h2>
         <DownArrow />
 
-        {/* Packages Section */}
+        {/* Packages */}
         <div className="grid grid-cols-1 gap-8">
-          {/* Entry Level Package */}
           <PackageSection
-            imagePath="/images/Paint Correction Stage 1.jpg"
+            imagePath="/images/paint_correction_stage_1.webp"
             alt="Entry Level Package"
             title="Entry Level Package"
-            description="With our entry-level package, we execute a meticulous single-step paint correction procedure utilizing a gentle compound. This method effectively eliminates a majority of minor scratches and swirl marks from your vehicle's paint surface. Not only does this meticulous process restore your car's original luster, but it also revitalizes the overall appearance of your vehicle's paint finish. To further safeguard the newly corrected surface, we apply a high-quality sealant at the end of the process. This sealant not only enhances the gloss and depth of the paint but also provides lasting protection against environmental elements, ensuring a longer-lasting, showroom-quality finish for your vehicle."
+            description="Single-step correction + sealant for gloss & protection."
             coupeSedanPrice="$400"
             oversizePrice="Additional cost starting at $150 and up."
             to={contactPath}
           />
-
-          {/* Premium Package */}
           <PackageSection
-            imagePath="/images/Paint Correction Stage 2.jpeg"
+            imagePath="/images/paint_correction_stage_2.webp"
             alt="Premium Package"
             title="Premium Package"
-            description="In our exclusive premium package, we precisely execute a comprehensive three-step paint correction process. The initial step involves the application of a potent abrasive compound designed to effectively eliminate deep scratches and imperfections present in your vehicle's paint. Following this, in the second step, a sophisticated polishing compound is carefully applied to address finer scratches, restoring your vehicle's paint to a showroom-quality shine. To conclude the process, we apply a high-quality sealant, providing long-lasting protection and enhancing the overall luster of your vehicle's finish."
+            description="Three-stage correction with polish & sealant for deep restoration and durability."
             coupeSedanPrice="$700"
             oversizePrice="Additional cost starting at $150 and up."
             to={contactPath}

@@ -3,6 +3,8 @@ import About from "./About";
 import Contact from "./Contact";
 import Gallery from "./Gallery";
 import Services from "./Services";
+import Testimonials from "./Testimonials";
+
 
 const Home = () => {
   // Function to scroll to the contact section
@@ -21,7 +23,7 @@ const Home = () => {
         <div
           className="absolute inset-0 overflow-hidden flex items-center lg:translate-x-1/4"
           style={{
-            backgroundImage: 'url("/images/nsx.png")',
+            backgroundImage: 'url("/images/nsx.webp")',
             backgroundSize: "cover",
             backgroundPosition: "left",
           }}
@@ -55,6 +57,8 @@ const Home = () => {
 
       {/* Gallery Section */}
       <Gallery />
+
+      <Testimonials />
 
       {/* Contact Section */}
       <section id="contact">

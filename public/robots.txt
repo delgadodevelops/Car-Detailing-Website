@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for foamexdetailing.com
+
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /private
+Allow: /
+
+# Tells Google and other bots where your sitemap is
+Sitemap: https://www.foamexdetailing.com/sitemap.xml
